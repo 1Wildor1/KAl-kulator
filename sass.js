@@ -1,4 +1,4 @@
-let myBut = document.querySelector('#knopka')
+let myBut = document.querySelector('#but')
 
 
  myBut.onclick =  function count (){
@@ -16,6 +16,13 @@ let myBut = document.querySelector('#knopka')
 
   switch(select) {
     case "/": 
+    if(myInp2 === '0' ) {
+     output.textContent = 'you cant divide by zero'
+     myInp1 = ''
+     myInp2 = ''
+     select = ''
+     return;
+    }
     document.querySelector('#output').innerHTML = myInp1 / myInp2;
   }
 
