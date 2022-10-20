@@ -1,29 +1,29 @@
 let myBut = document.querySelector('#but')
 
-
- myBut.onclick =  function count (){
-  let myInp1 = document.querySelector('#inp1');
-  let myInp2 = document.querySelector('#inp2');
+ myBut.onclick = () =>{
+  debugger;
+  let myInp1 = document.querySelector('#inp1').value;
+  let myInp2 = document.querySelector('#inp2').value;
   let select = document.querySelector('#sell').value;
-
-  myInp1 = document.querySelector('#inp1').value;
-  myInp2 =  document.querySelector('#inp2').value;
+  let output1 = document.getElementById("output");
 
   switch(select) {
+    case "+":
+      output1.innerHTML = +myInp1 + +myInp2;
+      break;  
+    case "*":
+      output1.innerHTML = +myInp1 * +myInp2;
+      break;
     case "-": 
-    document.querySelector('#output').innerHTML = myInp1 - myInp2;
-  }
-
-  switch(select) {
+    output1.innerHTML = +myInp1 - +myInp2;
+    break;
     case "/": 
-    if(myInp2 === '0' ) {
-     output.textContent = 'you cant divide by zero'
-     myInp1 = ''
-     myInp2 = ''
-     select = ''
-     return;
+    if(+myInp1 == 0 || +myInp2 == 0){
+      alert('гуляй лесом');
+      location.reload();
     }
-    document.querySelector('#output').innerHTML = myInp1 / myInp2;
+    output1.innerHTML = +myInp1 / +myInp2;
+    break;
   }
 
 }
