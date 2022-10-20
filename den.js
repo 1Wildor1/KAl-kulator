@@ -1,4 +1,4 @@
-let button = document.getElementById("knopka");
+let button = document.getElementById("but");
 
 button.onclick = function func() {
   let output1 = document.getElementById("output");
